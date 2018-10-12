@@ -2,7 +2,7 @@
 
 namespace FondOfSpryker\Yves\AssetsManifest;
 
-use FondOFSpryker\Yves\AssetsManifest\Twig\AssetsManifestTwigExtension;
+use FondOfSpryker\Yves\AssetsManifest\Twig\AssetsManifestTwigExtension;
 use Spryker\Yves\Kernel\AbstractFactory;
 
 

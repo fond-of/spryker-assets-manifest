@@ -1,6 +1,6 @@
 <?php
 
-namespace FondOfSpryker\Yves\GoogleTagManager\Plugin\Provider;
+namespace FondOfSpryker\Yves\AssetsManifest\Plugin\Provider;
 
 use Silex\Application;
 use Silex\ServiceProviderInterface;
@@ -40,7 +40,5 @@ class AssetsManifestTwigServiceProvider extends AbstractPlugin implements Servic
      *
      * @return void
      */
-    public function boot(Application $app)
-    {
-    }
+    public function boot(Application $app) {}
 }
