@@ -2,7 +2,7 @@
 
 namespace FondOfSpryker\Yves\AssetsManifest\Twig;
 
-use Spryker\Shared\Twig\TwigConstants;
+use FondOfSpryker\Shared\AssetsManifest\AssetsManifestConstants;
 use Spryker\Shared\Twig\TwigExtension;
 use Spryker\Shared\Config\Config;
 use Twig_Environment;
@@ -43,7 +43,7 @@ class AssetsManifestTwigExtension extends TwigExtension
      */
     protected function getPublicFolderPath(): string
     {
-        return '/assets/' .  Config::get(TwigConstants::YVES_THEME);
+        return '/assets/' .  Config::get(AssetsManifestConstants::PACKAGE);
     }
 
     /**
@@ -58,6 +58,7 @@ class AssetsManifestTwigExtension extends TwigExtension
             $this->getPublicFolderPath(),
             self::MANIFEST_FILE
         );
+
 
         if (!file_exists($manifestFilePath)) {
             return $assetsPath;
