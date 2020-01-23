@@ -5,7 +5,7 @@ namespace FondOfSpryker\Yves\AssetsManifest\Twig;
 use FondOfSpryker\Shared\AssetsManifest\AssetsManifestConstants;
 use Spryker\Shared\Twig\TwigExtension;
 use Spryker\Shared\Config\Config;
-use Twig_Environment;
+use Twig\Environment;
 use Twig_SimpleFunction;
 
 class AssetsManifestTwigExtension extends TwigExtension
@@ -49,7 +49,7 @@ class AssetsManifestTwigExtension extends TwigExtension
     /**
      * return string;
      */
-    protected function getAssetsPath($relativePath)
+    public function getAssetsPath($relativePath)
     {
         $assetsPath = "";
         $manifestFilePath = sprintf(
