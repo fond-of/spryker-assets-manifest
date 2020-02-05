@@ -4,5 +4,5 @@ namespace FondOfSpryker\Shared\AssetsManifest;
 
 interface AssetsManifestConstants
 {
-    const PACKAGE = 'PACKAGE';
+    public const PACKAGE = 'PACKAGE';
 }
