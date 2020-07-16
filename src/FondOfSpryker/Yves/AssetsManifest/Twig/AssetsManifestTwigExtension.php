@@ -52,7 +52,7 @@ class AssetsManifestTwigExtension extends TwigExtension
      */
     public function getAssetsPath($relativePath)
     {
-        $assetsPath = "";
+        $assetsPath = '';
         $manifestFilePath = sprintf(
             '%s/public/Yves%s/%s',
             APPLICATION_ROOT_DIR,
