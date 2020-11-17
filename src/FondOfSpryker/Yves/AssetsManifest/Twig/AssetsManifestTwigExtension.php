@@ -3,15 +3,14 @@
 namespace FondOfSpryker\Yves\AssetsManifest\Twig;
 
 use FondOfSpryker\Shared\AssetsManifest\AssetsManifestConstants;
-use Spryker\Shared\Twig\TwigExtension;
 use Spryker\Shared\Config\Config;
-use Twig_Environment;
+use Spryker\Shared\Twig\TwigExtension;
 use Twig_SimpleFunction;
 
 class AssetsManifestTwigExtension extends TwigExtension
 {
-    const FUNCTION_GET_ASSETS_MANIFEST_PATH = 'assetsManifest';
-    const MANIFEST_FILE = 'manifest.json';
+    public const FUNCTION_GET_ASSETS_MANIFEST_PATH = 'assetsManifest';
+    public const MANIFEST_FILE = 'manifest.json';
 
     /**
      * @return array
@@ -27,15 +26,17 @@ class AssetsManifestTwigExtension extends TwigExtension
      * @return \Twig_SimpleFunction
      */
     protected function createAssetsManifestFunction()
-
     {
         return new Twig_SimpleFunction(
-            static::FUNCTION_GET_ASSETS_MANIFEST_PATH, function ($relativePath) {
-            return $this->getAssetsPath($relativePath);
-        },[
+            static::FUNCTION_GET_ASSETS_MANIFEST_PATH,
+            function ($relativePath) {
+                return $this->getAssetsPath($relativePath);
+            },
+            [
             $this,
             self::FUNCTION_GET_ASSETS_MANIFEST_PATH,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -43,22 +44,21 @@ class AssetsManifestTwigExtension extends TwigExtension
      */
     protected function getPublicFolderPath(): string
     {
-        return '/assets/' .  Config::get(AssetsManifestConstants::PACKAGE);
+        return '/assets/' . Config::get(AssetsManifestConstants::PACKAGE);
     }
 
     /**
      * return string;
      */
-    protected function getAssetsPath($relativePath)
+    public function getAssetsPath($relativePath)
     {
-        $assetsPath = "";
+        $assetsPath = '';
         $manifestFilePath = sprintf(
             '%s/public/Yves%s/%s',
             APPLICATION_ROOT_DIR,
             $this->getPublicFolderPath(),
             self::MANIFEST_FILE
         );
-
 
         if (!file_exists($manifestFilePath)) {
             return $assetsPath;
